@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "67005986792",
+    "firebase_url": "https://car-management-c8d3a.firebaseio.com",
+    "project_id": "car-management-c8d3a",
+    "storage_bucket": "car-management-c8d3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67005986792:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67005986792-rllvinr4j9k3g6hviguu633p9tmupr6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClwItKLnDz_dgddHwheErgwz1WGbRatIs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

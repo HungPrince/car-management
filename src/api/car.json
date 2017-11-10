@@ -1,0 +1,92 @@
+{
+    "car": [
+        {
+            "ID": 1,
+            "Name": "Kiên Hiền",
+            "Owner": [
+                {
+                    "Name": "Kiên",
+                    "Phone": [
+                        "0967680605",
+                        "0967680605"
+                    ]
+                },
+                {
+                    "Name": "Hiền",
+                    "Phone": [
+                        "0967680605",
+                        "0967680605"
+                    ]
+                }
+            ],
+            "Phone": [
+                "0967680605",
+                "0967680605"
+            ],
+            "Travel": {
+                "from": "Thanh Hóa",
+                "to": "Hà Nội",
+                "timestart": "5.30 AM",
+                "timeto": "10 AM",
+                "timestart1": "12.30 PM",
+                "timeto1": "5 PM"
+            },
+            "Adrress": {
+                "Village": "Hoa Lộc",
+                "District": "Hậu Lộc",
+                "Province": "Thanh Hóa"
+            },
+            "Description": {
+                "numberchair": "40",
+                "sleep": "Y",
+                "clean": "Y",
+                "safe": "Y",
+                "note": "Nhà xe sạch sẽ, thoáng mát, chăm sóc tận tình chu đáo, rất hài lòng!"
+            }
+        },
+        {
+            "ID": 2,
+            "Name": "Hoàng Hưng",
+            "Owner": [
+                {
+                    "Name": "Hoàng",
+                    "Phone": [
+                        "0967680605",
+                        "0967680605"
+                    ]
+                },
+                {
+                    "Name": "Hưng",
+                    "Phone": [
+                        "0967680605",
+                        "0967680605"
+                    ]
+                }
+            ],
+            "Phone": [
+                "0967680605",
+                "0967680605"
+            ],
+            "Travel": {
+                "from": "Thanh Hóa",
+                "to": "Hà Nội",
+                "timestart": "5.30 AM",
+                "timeto": "10 AM",
+                "timestart1": "12.30 PM",
+                "timeto1": "5 PM"
+            },
+            "Adrress": {
+                "Village": "Hoa Lộc",
+                "District": "Hậu Lộc",
+                "Province": "Thanh Hóa"
+            },
+            "Description": {
+                "numberchair": "40",
+                "sleep": "Y",
+                "clean": "Y",
+                "safe": "Y",
+                "note": "Nhà xe sạch sẽ, thoáng mát, chăm sóc tận tình chu đáo, rất hài lòng!"
+            }
+        }
+    ]
+}

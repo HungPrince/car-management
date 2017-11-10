@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detail</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="viewMore">
+      <ion-segment-button value="phone">
+        Điện thoại
+      </ion-segment-button>
+      <ion-segment-button value="info">
+        Thông tin
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content>
+
+  <div [ngSwitch]="viewMore">
+    <ion-list *ngSwitchCase="'phone'">
+      <ion-item-sliding #item>
+        <ion-item>
+          0967680605
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button (click)="call('0967680605')"> <ion-icon color="balanced" name="call"></ion-icon>
+              </button>
+          <button ion-button color="danger" (click)="share(item)">Share</button>
+        </ion-item-options>
+
+        <ion-item-options side="right">
+          <button ion-button (click)="unread(item)">Unread</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'info'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/logo.png">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

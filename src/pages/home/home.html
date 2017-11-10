@@ -1,17 +1,20 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Danh sách nhà xe</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h2>Tìm kiếm</h2>
+  <ion-auto-complete [dataProvider]="searchProvider"   [alwaysShowList]="true" [template]="withFlags"></ion-auto-complete>
+  <ng-template #withFlags let-attrs="attrs">
+  <ion-list>
+    <ion-item (click)="itemClick(attrs.data)">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-thumbnail>
+      <h2>{{attrs.data.name}}</h2>
+    </ion-item>
+  </ion-list>
+  </ng-template>
 </ion-content>
