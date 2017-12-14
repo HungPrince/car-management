@@ -14,23 +14,23 @@ export class SearchProvider implements AutoCompleteService {
   constructor(public http: Http, public carProvider: CarProvider) {
   }
 
-  // getResults(keyword: string) {
-  //   return this.http.get("https://restcountries.eu/rest/v1/name/" + keyword)
-  //     .map(
-  //     result => {
-  //       console.log(result.json());
-  //       this.listCountries = result.json()
-  //         .filter(item => item.name.toLowerCase().startsWith(keyword.toLowerCase()));
-  //       return this.listCountries;
-  //     });
-  // }
-
   getResults(keyword: string) {
-    this.carProvider.getCar().subscribe(suc => {
-      let lstCar = JSON.parse(suc._body);
-      return lstCar.car.filter(item => item.Name.toLowerCase().startsWith(keyword.toLowerCase()));
-    }
-    )
+    return this.http.get("https://restcountries.eu/rest/v1/name/" + keyword)
+      .map(
+      result => {
+        console.log(result.json());
+        this.listCountries = result.json()
+          .filter(item => item.name.toLowerCase().startsWith(keyword.toLowerCase()));
+        return this.listCountries;
+      });
   }
+
+  // getResults(keyword: string) {
+  //   this.carProvider.getCar().subscribe(suc => {
+  //     let lstCar = JSON.parse(suc._body);
+  //     return lstCar.car.filter(item => item.Name.toLowerCase().startsWith(keyword.toLowerCase()));
+  //   }
+  //   )
+  // }
 
 }

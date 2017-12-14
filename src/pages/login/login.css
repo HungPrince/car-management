@@ -1,0 +1,50 @@
+.login-content {
+  background-color: #69717d; }
+
+page-login .login-content .logo-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  height: 85px;
+  overflow: hidden;
+  margin-top: 20%;
+  margin-bottom: 30px; }
+page-login .login-content .login-box {
+  padding: 20px 20px 0px 20px;
+  margin-top: 20px; }
+page-login .login-content ion-row {
+  align-items: center; }
+page-login .login-content ion-item {
+  border-radius: 30px !important;
+  padding-left: 30px !important;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  border-bottom: 0px !important;
+  box-shadow: none !important; }
+page-login .login-content .signup-col {
+  margin: 0px 16px 0px 16px;
+  padding-bottom: 20px; }
+page-login .login-content .item-inner {
+  box-shadow: none !important; }
+page-login .login-content .submit-btn {
+  border-radius: 30px !important; }
+page-login .login-content .register-btn {
+  font-size: 0.8em; }
+page-login .login-content div.error {
+  background-color: red;
+  color: white !important;
+  margin: auto;
+  margin-top: 3px;
+  padding: 5px;
+  text-align: center;
+  width: 80%; }
+page-login .login-content div.success {
+  background-color: green;
+  color: white;
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  text-align: center;
+  width: 80%; }
+
+/*# sourceMappingURL=login.css.map */

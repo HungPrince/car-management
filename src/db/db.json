@@ -1,0 +1,40 @@
+{
+  "bus": {
+    "bus1": {
+      "description": {
+        "address": "Quang Lộc - Hậu lộc - Thanh hóa",
+        "bus_number": "36F1-09876",
+        "image": "abc.jpg",
+        "owner": "HungPrince",
+        "time_from": 7,
+        "timeto": 12
+      },
+      "name": "Hà vinh",
+      "phone_number": {
+        "phone1": "0967680605",
+        "phone2": "0167559480"
+      }
+    },
+    "bus2": {
+      "description": {
+        "address": "Quang Lộc - Hậu lộc - Thanh hóa",
+        "bus_number": "36F1-09876",
+        "image": "abc.jpg",
+        "owner": "HungPrince",
+        "time_from": 7,
+        "timeto": 12
+      },
+      "name": "Hà vinh",
+      "phone_number": {
+        "phone1": "0967680605",
+        "phone2": "0167559480"
+      }
+    }
+  },
+  "users": {
+    "user1": {
+      "password": 123456,
+      "username": "HungPrince"
+    }
+  }
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {
   GoogleMaps,
@@ -10,34 +11,67 @@ import {
   Marker
 } from '@ionic-native/google-maps';
 
+declare var google;
+
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
 export class ContactPage {
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
 
-  map: GoogleMap;
-  constructor(public navCtrl: NavController, private googleMaps: GoogleMaps) {
+  constructor(public navCtrl: NavController, public geolocation: Geolocation) {
 
   }
 
   ionViewDidLoad() {
-
+    this.loadMap();
   }
 
   loadMap() {
-    let mapOptions: GoogleMapOptions = {
-      camera: {
-        target: {
-          lat: 43.0741904,
-          lng: -89.3809802
-        },
-        zoom: 18,
-        tilt: 30
+
+    this.geolocation.getCurrentPosition().then((position) => {
+
+      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-    }
-    this.map = this.googleMaps.create('map_canvas', mapOptions);
+
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    }, (err) => {
+      console.log(err);
+    });
   }
 
+  addMarker(){
+    
+     let marker = new google.maps.Marker({
+       map: this.map,
+       animation: google.maps.Animation.DROP,
+       position: this.map.getCenter()
+     });
+    
+     let content = "<h4>Information!</h4>";         
+    
+     this.addInfoWindow(marker, content);
+    
+   }
+
+   addInfoWindow(marker, content){
+    
+     let infoWindow = new google.maps.InfoWindow({
+       content: content
+     });
+    
+     google.maps.event.addListener(marker, 'click', () => {
+       infoWindow.open(this.map, marker);
+     });
+    
+   }
 
 }

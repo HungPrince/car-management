@@ -5,12 +5,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from './../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage: any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public push: Push, public alertCtr: AlertController) {
     platform.ready().then(() => {
@@ -19,36 +20,36 @@ export class MyApp {
       this.pushsetup();
     });
   }
-    pushsetup() {
-      const options: PushOptions = {
-       android: {
-       },
-       ios: {
-           alert: 'true',
-           badge: true,
-           sound: 'false'
-       },
-       windows: {}
+  pushsetup() {
+    const options: PushOptions = {
+      android: {
+      },
+      ios: {
+        alert: 'true',
+        badge: true,
+        sound: 'false'
+      },
+      windows: {}
     };
 
     const pushObject: PushObject = this.push.init(options);
-    
-     pushObject.on('notification').subscribe((notification: any) => {
-       if (notification.additionalData.foreground) {
-         let alertNoty = this.alertCtr.create({
-           title: 'New Push notification',
-           message: notification.message
-         });
-         alertNoty.present();
-       }
-     });
-    
-     pushObject.on('registration').subscribe((registration: any) => {
-        //do whatever you want with the registration ID
-        console.log(registration);
-     });
-    
-     pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
-     }
-    
+
+    pushObject.on('notification').subscribe((notification: any) => {
+      if (notification.additionalData.foreground) {
+        let alertNoty = this.alertCtr.create({
+          title: 'New Push notification',
+          message: notification.message
+        });
+        alertNoty.present();
+      }
+    });
+
+    pushObject.on('registration').subscribe((registration: any) => {
+      //do whatever you want with the registration ID
+      console.log(registration);
+    });
+
+    pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+  }
+
 }
