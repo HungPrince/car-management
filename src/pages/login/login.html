@@ -1,6 +1,6 @@
 <ion-header>
 
-    <ion-navbar hideBackButton="true">
+    <ion-navbar hideBackButton="true"  hide-tabs>
         <ion-title>Login</ion-title>
     </ion-navbar>
 
@@ -8,7 +8,7 @@
 
 <ion-content class="login-content" padding>
     <div class="logo-row">
-        <img src="assets/img/header.png" />
+        <img src="https://firebasestorage.googleapis.com/v0/b/car-management-c8d3a.appspot.com/o/bus.jpg?alt=media&token=11470c27-a494-4838-bfe7-06d2930aeb07" width="50%" height="50%"/>
     </div>
     <div class="login-box">
         <form #frm="ngForm" (ngSubmit)="login(frm.value)">
@@ -27,7 +27,7 @@
                     </ion-list>
                 </ion-col>
 
-                <div *ngIf="submitted" [ngClass]="{'success':!classError,'error':classError}">{{message}}</div>
+                <div *ngIf="submitted && message !=''" class="error">{{message}}</div>
             </ion-row>
 
             <ion-row>

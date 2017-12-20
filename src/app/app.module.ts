@@ -11,8 +11,10 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
 
 
 import { AboutPage } from '../pages/about/about';
@@ -22,6 +24,7 @@ import { DetailPage } from '../pages/detail/detail';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { ModalPage } from '../pages/modal/modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,13 +49,15 @@ export const firebaseConfig = {
     DetailPage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ModalPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
     AutoCompleteModule,
     FormsModule,
     HttpModule,
@@ -68,7 +73,8 @@ export const firebaseConfig = {
     DetailPage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ModalPage
   ],
   providers: [
     StatusBar,
@@ -81,6 +87,7 @@ export const firebaseConfig = {
     GoogleMaps,
     Geolocation,
     SearchProvider,
+    FilePath
   ]
 })
 export class AppModule { }

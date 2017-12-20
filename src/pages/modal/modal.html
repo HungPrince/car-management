@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-toolbar>
+      <ion-buttons left class="loginnavbtn" (click)="goback()"></ion-buttons>
+      <ion-title>Add Bus</ion-title>
+    </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <img [src]="currentImage" style="width: 100%" [hidden]="currentImage === null">
+  <h3 [hidden]="currentImage !== null" class="text-center">Please Select Image!</h3>
+  <button ion-button full icon-left (click)="presentActionSheet()">
+      <ion-icon name="camera"></ion-icon>
+      Capture Image
+  </button>
+  <form #frm="ngForm" (ngSubmit)="addBus(frm.value)">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+
+          <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input type="text" placeholder="" name="name" [(ngModel)]="name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Phone number</ion-label>
+            <ion-input type="text" placeholder="" name="phone_number" [(ngModel)]="phone_number"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Address</ion-label>
+            <ion-input type="text" placeholder="" name="address" [(ngModel)]="address"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Description</ion-label>
+            <ion-textarea type="text" placeholder="" name="description" [(ngModel)]="description"></ion-textarea>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="signup-col">
+        <button ion-button class="submit-btn" full type="submit" color="primary">Save</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

@@ -26,11 +26,9 @@ export class SearchProvider implements AutoCompleteService {
   }
 
   // getResults(keyword: string) {
-  //   this.carProvider.getCar().subscribe(suc => {
-  //     let lstCar = JSON.parse(suc._body);
-  //     return lstCar.car.filter(item => item.Name.toLowerCase().startsWith(keyword.toLowerCase()));
-  //   }
-  //   )
+  //   return this.carProvider.getCar().subscribe(data=>{
+  //     console.log(data.filter(item => item.name.toLowerCase().startsWith(keyword.toLowerCase())));
+  //     return data.filter(item => item.name.toLowerCase().startsWith(keyword.toLowerCase()));
+  //   });
   // }
-
 }

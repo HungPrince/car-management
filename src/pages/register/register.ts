@@ -6,6 +6,8 @@ import { LoaderService } from '../../services/loader';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import { HomePage } from './../home/home';
+
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
@@ -33,27 +35,6 @@ export class RegisterPage extends LoaderService {
     })
   }
 
-
-  options: CameraOptions = {
-    quality: 100,
-    destinationType: this.camera.DestinationType.DATA_URL,
-    encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE,
-    allowEdit: true,
-    targetHeight: 300,
-    targetWidth: 300,
-    saveToPhotoAlbum: false
-  };
-
-  takePicture() {
-    this.camera.getPicture(this.options).then((imageData) => {
-      this.base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-      console.log(err);
-    });
-  }
-
-
   async register() {
     this.loader('Register loading...', 500);
     if (this.formRegister.value.username) {
@@ -66,8 +47,12 @@ export class RegisterPage extends LoaderService {
       this.formRegister.value.email = this.formRegister.value.email.trim();
     }
     try {
-      let result = await this.afAuth.auth.createUserWithEmailAndPassword(this.formRegister.value.email, this.formRegister.value.password);
-      this.storage.set("user", result);
+      let result = await this.afAuth.auth.createUserWithEmailAndPassword(this.formRegister.value.email, this.formRegister.value.password).then(
+        success=>{
+          this.storage.set("user", result);
+          this.navCtrl.push(HomePage);
+        }
+      )
       console.log(result);
     } catch (error) {
       console.log(error);

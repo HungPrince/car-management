@@ -11,10 +11,6 @@
     <form [formGroup]="formRegister" (ngSubmit)="register()">
       <ion-row>
         <ion-col>
-          <ion-avatar iem-start>
-            <img [src]="base64Image" alt="">
-          </ion-avatar>
-          <button (click)="takePicture()">Select image profile</button>
           <ion-list inset>
             <ion-item>
               <ion-input placeholder="Name" name="name" formControlName="username" type="text"></ion-input>
